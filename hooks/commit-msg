@@ -1,0 +1,8 @@
+#!/bin/sh
+
+COUNT=$(cat "$1" | head -1 | wc -l)
+if [ $COUNT -gt 50 ] ; then
+    echo 'Error: Invalid commit message.'
+    echo "       The commit must be under 50 chars. (It's $COUNT chars.)"
+    exit 1
+fi
